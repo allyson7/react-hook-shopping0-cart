@@ -39,11 +39,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         .get("/products")
         .then((response) => setCart(response.data[productId]));
 
-      console.log("carrinho", cart);
       // localStorage.setItem("@RocketShoes:cart", JSON.stringify(cart));
     } catch {
       // TODO
     }
+    console.log("carrinho", cart);
   };
 
   const removeProduct = (productId: number) => {
